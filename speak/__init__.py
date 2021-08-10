@@ -1,16 +1,15 @@
 """ This module uses pyttsx3 to speak as the first step in every pyttsx3 script is this so I am making a module for it."""
+import pyttsx3
 
-Class Speak:
-    """ I am bad in classes but since pypi requries one I'll give it a go """
-    import pyttsx3
+class Speak:
 
-    self.engine = pyttsx3.init() # This will initialize pyttsx3
+  def __init__(self):
+    self.engine = pyttsx3.init()
 
-    def speak(self,audio):
-        """ The main Function"""
-        self.engine.say(audio)
-        self.engine.runAndWait()
+  def speak(self,audio):
 
+    self.engine.say(audio)
+    self.engine.runAndWait()
 
-# Hopefully this will run
-speak("Hello user thanks for downloading this module")
+client = Speak()
+client.speak("Hello")
